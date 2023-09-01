@@ -17,12 +17,16 @@ func main() {
 		os.Exit(1)
 	}
 
-	shred(os.Args[1])
-	shred(os.Args[1])
-	shred(os.Args[1])
+	Shred(os.Args[1])
 }
 
-func shred(filename string) {
+func Shred(path string) {
+	shred1(path)
+	shred1(path)
+	shred1(path)
+}
+
+func shred1(filename string) {
 	// We want to overwrite a file to erase it.  This means that we need to be
 	// certain that the file blocks are overwritten and not freed.  We will assume
 	// that if we open the file for read/write WITHOUT truncation, that when we
